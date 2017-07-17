@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "api": "node ratingsAPI.js",
     "build": "webpack",
     "cmt": "git-cz",
     "dev": "webpack-dev-server",
@@ -82,8 +83,6 @@
     }
   },
   "jest": {
-    "snapshotSerializers": [
-      "jest-serializer-enzyme"
-    ]
+    "snapshotSerializers": ["jest-serializer-enzyme"]
   }
 }
