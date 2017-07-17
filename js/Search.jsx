@@ -2,9 +2,11 @@ import React from 'react'
 
 import preload from '../data.json'
 
+import ShowCard from './ShowCard'
+
 const Search = () => (
   <div className="search">
-    {preload.shows.map(show => <h3>{show.title}</h3>)}
+    {preload.shows.map(show => <ShowCard show={show} />)}
   </div>
 )
 
