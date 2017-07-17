@@ -5,6 +5,8 @@
     "dev": "webpack-dev-server",
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
+    "test": "jest --no-cache",
+    "test:update": "jest -u --no-cache",
     "watch": "webpack --watch"
   },
   "dependencies": {
@@ -76,5 +78,10 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-serializer-enzyme"
+    ]
   }
 }
