@@ -1,7 +1,7 @@
 // @flow
 
 import { Link } from 'react-router-dom'
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled(Link)`
@@ -21,18 +21,28 @@ const Image = styled.img`
   margin-right: 10px;
 `
 
-const ShowCard = (props: Show) => (
-  <Wrapper to={`/details/${props.imdbID}`}>
-    <Image
-      src={`/public/img/posters/${props.poster}`}
-      alt={`${props.title} show poster`}
-    />
-    <div>
-      <h3>{props.title}</h3>
-      <h4>({props.year})</h4>
-      <p>{props.description}</p>
-    </div>
-  </Wrapper>
-)
+class ShowCard extends Component {
+  shouldComponentUpdate() {
+    return false
+  }
+
+  props: Show
+
+  render() {
+    return (
+      <Wrapper to={`/details/${this.props.imdbID}`}>
+        <Image
+          src={`/public/img/posters/${this.props.poster}`}
+          alt={`${this.props.title} show poster`}
+        />
+        <div>
+          <h3>{this.props.title}</h3>
+          <h4>({this.props.year})</h4>
+          <p>{this.props.description}</p>
+        </div>
+      </Wrapper>
+    )
+  }
+}
 
 export default ShowCard
